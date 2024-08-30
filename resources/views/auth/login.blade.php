@@ -42,6 +42,10 @@
                 <x-button class="ms-4">
                     {{ __('Log in') }}
                 </x-button>
+               
+            </div>
+            <div class="register-link mt-6 text-center text-custom-green">
+                    <p>Don't have an account? <a href="/register" class="underline hover:text-custom-green-hover">Register</a></p>
             </div>
         </form>
     </x-authentication-card>
