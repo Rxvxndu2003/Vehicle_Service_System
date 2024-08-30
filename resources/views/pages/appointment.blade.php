@@ -78,6 +78,7 @@
                 <th>Location</th>
                 <th>Schedule Date</th>
                 <th>Schedule Time</th>
+                <th>Is Complete</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -86,10 +87,17 @@
                 <tr>
                     <td>{{ $appointment->full_name }}</td>
                     <td>{{ $appointment->serviceCenter->service_center }}</td>
-                    <td>{{ $appointment->service}}</td>
+                    <td>{{ $appointment->service }}</td>
                     <td>{{ $appointment->location }}</td>
                     <td>{{ $appointment->schedule_date }}</td>
                     <td>{{ $appointment->schedule_time }}</td>
+                    <td>
+                        @if($appointment->is_completed)
+                            <i class="fas fa-check-circle text-success"></i>
+                        @else
+                            <i class="fas fa-times-circle text-danger"></i>
+                        @endif
+                    </td>
                     <td>
                         <form action="{{ route('appointments.destroy', $appointment->id) }}" method="POST">
                             @csrf

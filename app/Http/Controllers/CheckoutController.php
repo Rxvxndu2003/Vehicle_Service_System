@@ -51,16 +51,19 @@ public function store(Request $request)
     // Process payment here (e.g., using a payment gateway API)
 
     // Save order details to the database
-    $order = new Order();
-    $order->user_id = auth()->id();
-    $order->full_name = $request->full_name;
-    $order->email = $request->email;
-    $order->address = $request->address;
-    $order->postal_code = $request->postal_code;
-    $order->phone = $request->phone;
-    $order->payment_details = $validatedData['payment_method']; // Capture payment method
-    $order->total = array_sum(array_column(Session::get('cart', []), 'price'));
-    $order->save();
+    foreach (Session::get('cart', []) as $id => $details) {
+        $order = new Order();
+        $order->user_id = auth()->id();
+        $order->full_name = $request->full_name;
+        $order->product_id = $id; // Assuming $id is the product ID
+        $order->email = $request->email;
+        $order->address = $request->address;
+        $order->postal_code = $request->postal_code;
+        $order->phone = $request->phone;
+        $order->payment_details = $request->payment_method; // Capture payment method
+        $order->total = $details['price'] * $details['quantity']; // Total for this product
+        $order->save();
+    }
 
     // Clear the cart
     Session::forget('cart');
@@ -68,3 +71,13 @@ public function store(Request $request)
     return redirect()->route('orders.index', ['order' => $order->id])->with('success', 'Order placed successfully!');
 }
 }
+
+// Process payment here (e.g., using a payment gateway API)
+
+// Loop through cart items and save order details to the database
+
+
+// Clear the cart
+Session::forget('cart');
+
+return redirect()->route('orders.index')->with('success', 'Order placed successfully!');

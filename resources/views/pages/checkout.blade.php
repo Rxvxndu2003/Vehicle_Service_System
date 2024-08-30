@@ -45,8 +45,8 @@
                 <div class="form-group">
                     <label for="payment_method">Payment Method <span class="text-danger">*</span></label>
                     <select class="form-control" id="payment_method" name="payment_method" required>
-                        <option value="credit_card">Credit Card</option>
-                        <option value="paypal">PayPal</option>
+                        <option value="credit_card">Cash On Delivery</option>
+                        <option value="paypal">Koko: Buy Now Pay Later</option>
                         <option value="bank_transfer">Bank Transfer</option>
                     </select>
                 </div>
@@ -103,7 +103,7 @@
                         </div>
                         <div class="form-group">
                             <input type="radio" id="webxpay" name="payment_method" value="webxpay">
-                            <label for="webxpay">Pay with WebXPay</label>
+                            <label for="webxpay">Bank Transfer</label>
                         </div>
                     </div>
 

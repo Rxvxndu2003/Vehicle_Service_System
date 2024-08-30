@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title> Gift Shoping Website Template  | Smarteyeapps.com</title>
+        <title>M & N Service Center - Checkout</title>
+        <link rel="icon" href="{{ asset('M&NLogo.ico') }}" type="image/x-icon">
     </head>
     
 @include('Libraries.style') 

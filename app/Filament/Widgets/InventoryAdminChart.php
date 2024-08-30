@@ -11,7 +11,7 @@ class InventoryAdminChart extends ChartWidget
 {
     protected static ?string $heading = 'Service Chart';
 
-    protected static ?int $sort = 5;
+    protected static ?int $sort = 6;
 
     protected static string $color = 'warning';
 

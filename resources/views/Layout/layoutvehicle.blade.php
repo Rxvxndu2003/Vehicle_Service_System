@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>M & N Service Center - Products</title>
+        <title> M & N Service Center - Vehicle</title>
         <link rel="icon" href="{{ asset('M&NLogo.ico') }}" type="image/x-icon">
     </head>
     
@@ -37,7 +37,7 @@
         <div class="container-fluid  py-5 product-cover">
             <div class="container-xl">
                 <div class="row">
-                   @yield('products')
+                   @yield('content')
                 </div>
             </div>
         </div>
@@ -55,8 +55,6 @@
 @include('scripts.scripts') 
 
 @include('scripts.productsscript') 
-        
-   
         
 </body>
    

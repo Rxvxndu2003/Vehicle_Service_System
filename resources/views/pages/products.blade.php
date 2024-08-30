@@ -48,7 +48,7 @@
                                         </ul>
                                         <div class="row pt-2">
                                             <div class="col-md-6">
-                                                <button class="btn mb-2 fw-bold w-100 btn-danger">Buy Now</button>
+                                                <button class="btn mb-2 fw-bold w-100 btn-danger buy-now-btn" data-id="${product.id}">Buy Now</button>
                                             </div>
                                             <div class="col-md-6">
                                                 <button class="btn fw-bold w-100 btn-outline-danger add-to-cart-btn" data-id="${product.id}">Add to Cart</button>
@@ -62,25 +62,10 @@
                     $('#product-list').html(productList);
                 }
             });
-
-            // Add to cart functionality
-            $(document).on('click', '.add-to-cart-btn', function(e) {
-                e.preventDefault();
-
-                var productId = $(this).data('id');
-
-                $.ajax({
-                    url: '{{ route('cart.add') }}',
-                    method: 'POST',
-                    data: {
-                        _token: '{{ csrf_token() }}',
-                        id: productId
-                    },
-                    success: function(response) {
-                        alert(response.message);
-                    }
-                });
-            });
         });
     </script>
 @endsection
+
+
+
+

@@ -1,4 +1,4 @@
-suppliers<?php
+<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('suppliers', function (Blueprint $table) {
+        Schema::create('user_vehicles', function (Blueprint $table) {
             $table->id();
-            $table->string('supplier_name')->nullable();
-            $table->string('supplier_email')->nullable();
-            $table->string('supplier_phone')->nullable();
-            $table->string('supplier_address')->nullable();
+            $table->string('full_name');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('vehicle_name')->nullable();
+            $table->string('vehicle_number')->nullable();
+            $table->date('made')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('suppliers');
+        Schema::dropIfExists('user_vehicles');
     }
 };

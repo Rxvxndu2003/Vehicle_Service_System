@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title>CarServ - Car Repair HTML Template</title>
+    <title>M & N Service Center - Home</title>
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('M&NLogo.ico') }}" type="image/x-icon">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">

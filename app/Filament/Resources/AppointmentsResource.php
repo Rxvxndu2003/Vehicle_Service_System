@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\AppointmentsResource\Pages;
-use App\Filament\Resources\AppointmentsResource\RelationManagers;
 use App\Models\Appointments;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -11,8 +10,6 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Tables\Filters\Filter;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Notifications\Notification;
 
 class AppointmentsResource extends Resource
@@ -34,7 +31,6 @@ class AppointmentsResource extends Resource
     {
         return 'success';
     }
-
 
     public static function form(Form $form): Form
     {
@@ -84,7 +80,8 @@ class AppointmentsResource extends Resource
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('location')
-                    ->searchable(),
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('schedule_date')
                     ->date()
                     ->sortable(),
@@ -97,6 +94,9 @@ class AppointmentsResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\BooleanColumn::make('is_completed')
+                    ->label('Completed')
+                    ->sortable(),
             ])
             ->filters([
                 Filter::make('is_featured')
@@ -111,7 +111,20 @@ class AppointmentsResource extends Resource
                        ->success()
                        ->title('Appointment Deleted.')
                        ->body('Appointment has been deleted successfully.')
-                  )
+                  ),
+                Tables\Actions\Action::make('complete')
+                    ->label('Complete')
+                    ->action(function ($record) {
+                        $record->update(['is_completed' => true]);
+                        Notification::make()
+                            ->success()
+                            ->title('Appointment Completed')
+                            ->body('The appointment has been marked as completed.')
+                            ->send();
+                    })
+                    ->requiresConfirmation()
+                    ->color('success')
+                    ->icon('heroicon-o-check'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

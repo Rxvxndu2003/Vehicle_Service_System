@@ -13,7 +13,7 @@ class CustomerAdminChart extends ChartWidget
 
     protected static string $color = 'warning';
 
-    protected static ?int $sort = 2;
+    protected static ?int $sort = 4;
 
     protected function getData(): array
     {

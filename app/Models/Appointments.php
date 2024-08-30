@@ -21,6 +21,7 @@ class Appointments extends Model
         'location',
         'schedule_date',
         'schedule_time',
+        'is_completed'
     ];
 
     public function customer(): BelongsTo

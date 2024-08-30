@@ -10,11 +10,14 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\VehicleController;
 
 Route::get('/payment/{order}', [PaymentController::class, 'show'])->name('payment.show');
 Route::post('/payment/{order}', [PaymentController::class, 'process'])->name('payment.process');
 
 Route::get('/order-confirmation/{order}', [PaymentController::class, 'confirmation'])->name('order.confirmation');
+
+Route::get('/cart/count', [CartController::class, 'count'])->name('cart.count');
 
 
 Route::middleware('auth')->group(function () {
@@ -29,18 +32,14 @@ Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.s
 
 Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/appointments', function () {
-        return view('livewire.appointment');
-    })->name('appointment');
-});
+
 Route::get('/appointments', [AppointmentController::class, 'index'])->name('appointments.index');
 Route::post('/appointments', [AppointmentController::class, 'store'])->name('appointments.store');
 Route::delete('/appointments/{id}', [AppointmentController::class, 'destroy'])->name('appointments.destroy');
+
+Route::get('/vehicles', [VehicleController::class, 'index'])->name('vehicles.index');
+Route::post('/vehicles', [VehicleController::class, 'store'])->name('vehicles.store');
+Route::delete('/vehicles/{id}', [VehicleController::class, 'destroy'])->name('vehicles.destroy');
 
 Route::get('/fetch-products', [ProductController::class, 'fetchProducts'])->name('products.fetch');
 
@@ -61,3 +60,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+

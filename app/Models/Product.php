@@ -14,4 +14,9 @@ class Product extends Model
         'price',
         'rating',
     ];
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

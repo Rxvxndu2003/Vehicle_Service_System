@@ -18,6 +18,7 @@ class UserAppointment extends Model
         'location',
         'schedule_date',
         'schedule_time',
+        'is_completed'
     ];
 
     public function user()

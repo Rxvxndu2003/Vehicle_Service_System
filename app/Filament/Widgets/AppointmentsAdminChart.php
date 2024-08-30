@@ -11,7 +11,7 @@ class AppointmentsAdminChart extends ChartWidget
 {
     protected static ?string $heading = 'Vehicle Chart';
 
-    protected static ?int $sort = 4;
+    protected static ?int $sort = 5;
 
     protected function getData(): array
     {

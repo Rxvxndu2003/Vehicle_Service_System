@@ -13,6 +13,13 @@ class CartController extends Controller
         $cart = Session::get('cart', []);
         return view('pages.cart', compact('cart'));
     }
+    public function count()
+{
+    $cart = session('cart', []);
+    $count = array_sum(array_column($cart, 'quantity'));
+
+    return response()->json(['count' => $count]);
+}
 
     public function add(Request $request)
     {
