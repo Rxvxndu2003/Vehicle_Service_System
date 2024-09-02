@@ -49,8 +49,6 @@ route::get('/service',[TemplateController::class,'index2']);
 route::get('/contact',[TemplateController::class,'index3']);
 route::get('/products',[TemplateController::class,'index4']);
 
-
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

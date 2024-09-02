@@ -60,6 +60,11 @@
                         `;
                     });
                     $('#product-list').html(productList);
+
+                    $('.buy-now-btn').click(function() {
+                    const productId = $(this).data('id');
+                    window.location.href = `api/product-details/${productId}`;
+            });
                 }
             });
         });
