@@ -8,6 +8,10 @@
     </head>
     
 @include('Libraries.itemstyle') 
+
+<!-- Spinner Start -->
+@include('components.spinner') 
+<!-- Spinner End -->
 <!-- Topbar Start -->
 @include('components.topbar') 
 <!-- Topbar End -->
@@ -45,9 +49,9 @@
 
 
 <!-- JavaScript Libraries -->
-@include('scripts.scripts') 
+@include('scripts.itemscript') 
 
-@include('scripts.productsscript') 
+
         
    
         

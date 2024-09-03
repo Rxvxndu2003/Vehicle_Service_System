@@ -63,7 +63,7 @@
 
                     $('.buy-now-btn').click(function() {
                     const productId = $(this).data('id');
-                    window.location.href = `api/product-details/${productId}`;
+                    window.location.href = `{{ url('api/product-details/${productId}') }}`;
             });
                 }
             });
