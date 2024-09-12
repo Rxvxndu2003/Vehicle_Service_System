@@ -6,6 +6,11 @@ use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ServiceCenterController;
+
+Route::get('/services', [ServiceController::class, 'index']);
+
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -35,4 +40,9 @@ Route::middleware('auth:sanctum')->group(function (){
     Route::get('/vehicles', [VehicleController::class, 'index'])->name('vehicles.index');
     Route::post('/vehicles', [VehicleController::class, 'store'])->name('vehicles.store');
     Route::delete('/vehicles/{id}', [VehicleController::class, 'destroy'])->name('vehicles.destroy');
+});
+
+Route::middleware('auth:sanctum')->group(function (){
+    Route::get('/service-centers', [ServiceCenterController::class, 'index']);
+    Route::get('/services', [ServiceController::class, 'index']);
 });
