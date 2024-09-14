@@ -8,6 +8,7 @@ use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceCenterController;
+use App\Http\Controllers\AddressController;
 
 Route::get('/services', [ServiceController::class, 'index']);
 
@@ -46,3 +47,5 @@ Route::middleware('auth:sanctum')->group(function (){
     Route::get('/service-centers', [ServiceCenterController::class, 'index']);
     Route::get('/services', [ServiceController::class, 'index']);
 });
+
+Route::post('/addresses', [AddressController::class, 'store']);

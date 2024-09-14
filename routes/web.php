@@ -11,6 +11,18 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\VehicleController;
+use App\Http\Controllers\AddressController;
+
+Route::get('/addresses/create', function() {
+    return view('pages.address');
+})->name('addresses.create');
+
+Route::get('addresses', [AddressController::class, 'getUserAddresses'])->name('addresses.index');
+Route::post('addresses', [AddressController::class, 'store'])->name('addresses.store');
+Route::get('addresses/{id}/edit', [AddressController::class, 'edit'])->name('addresses.edit');
+Route::put('addresses/{id}', [AddressController::class, 'update'])->name('addresses.update');
+Route::delete('addresses/{id}', [AddressController::class, 'destroy'])->name('addresses.destroy');
+
 
 Route::get('/payment/{order}', [PaymentController::class, 'show'])->name('payment.show');
 Route::post('/payment/{order}', [PaymentController::class, 'process'])->name('payment.process');

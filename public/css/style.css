@@ -18,6 +18,81 @@
     z-index: 99;
 }
 
+/* CSS for the Address Form */
+.address-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.address-form .form-group {
+    margin-bottom: 15px;
+}
+
+.address-form label {
+    font-weight: bold;
+}
+
+.address-form input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+}
+
+.address-form .btn-primary {
+    background-color: #D81324;
+    border-color: #D81324;
+}
+
+/* CSS for the Address Table */
+.address-table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.address-table th,
+.address-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.address-table thead {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.address-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.address-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+.address-table td {
+    border-bottom: 1px solid #ddd;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+}
 
 /*** Spinner ***/
 #spinner {
@@ -253,6 +328,7 @@ container {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 h2 {
     text-align: center;

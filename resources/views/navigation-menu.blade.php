@@ -26,6 +26,9 @@
                     <x-nav-link href="{{ route('vehicles.index') }}">
                         {{ __('Vehicles') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('addresses.create') }}">
+                        {{ __('Address') }}
+                    </x-nav-link>
 
                 </div>
             </div>
