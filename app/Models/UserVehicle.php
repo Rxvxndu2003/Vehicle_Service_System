@@ -12,7 +12,6 @@ class UserVehicle extends Model
     protected $fillable = [
         'user_id',
         'full_name',
-        'location',
         'vehicle_name',
         'vehicle_number',
         'made'

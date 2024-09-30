@@ -1,7 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 [x-cloak] {
     display: none;
+}
+
+@layer components {
+    .custom-font {
+      @apply font-sans text-xl text-primary; /* Apply Tailwind utilities */
+      font-family: 'Gowun Batang', sans-serif; /* Add your custom font */
+    }
 }

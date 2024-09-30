@@ -22,7 +22,6 @@ class AppointmentController extends Controller
     }
 
     // AppointmentsController.php
-
 public function store(Request $request)
 {
     $validatedData = $request->validate([

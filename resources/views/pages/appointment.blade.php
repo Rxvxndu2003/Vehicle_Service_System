@@ -27,7 +27,7 @@
         @csrf
         <div class="form-group">
             <label for="location">Full Name</label>
-            <input type="text" name="full_name" id="full_name" class="form-control">
+            <input type="text" name="full_name" id="full_name" class="form-control" required>
         </div>
 
         <div class="form-group">
@@ -52,17 +52,17 @@
 
         <div class="form-group">
             <label for="location">Location</label>
-            <input type="text" name="location" id="location" class="form-control">
+            <input type="text" name="location" id="location" class="form-control" required>
         </div>
 
         <div class="form-group">
             <label for="schedule_date">Schedule Date</label>
-            <input type="date" name="schedule_date" id="schedule_date" class="form-control">
+            <input type="date" name="schedule_date" id="schedule_date" class="form-control" required>
         </div>
 
         <div class="form-group">
             <label for="schedule_time">Schedule Time</label>
-            <input type="time" name="schedule_time" id="schedule_time" class="form-control">
+            <input type="time" name="schedule_time" id="schedule_time" class="form-control" required>
         </div>
 
         <button type="submit" class="btn btn-primary">Create Appointment</button>

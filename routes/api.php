@@ -48,4 +48,6 @@ Route::middleware('auth:sanctum')->group(function (){
     Route::get('/services', [ServiceController::class, 'index']);
 });
 
-Route::post('/addresses', [AddressController::class, 'store']);
+Route::post('/addresses/store', [AddressController::class, 'store']);
+Route::get('/addresses', [AddressController::class, 'getUserAddresses']);
+Route::get('/addresses/{id}/edit', [AddressController::class, 'edit']);

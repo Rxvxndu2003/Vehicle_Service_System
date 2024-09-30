@@ -54,6 +54,7 @@ Route::post('/vehicles', [VehicleController::class, 'store'])->name('vehicles.st
 Route::delete('/vehicles/{id}', [VehicleController::class, 'destroy'])->name('vehicles.destroy');
 
 Route::get('/fetch-products', [ProductController::class, 'fetchProducts'])->name('products.fetch');
+Route::get('/product-details/{id}', [ProductController::class, 'show'])->name('products.show');
 
 route::get('/',[TemplateController::class,'index']);
 route::get('/about',[TemplateController::class,'index1']);
