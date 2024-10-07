@@ -36,8 +36,7 @@ Make sure you have the following installed on your system:
 1. Clone the repository:
    
    ```bash
-   git clone https://github.com/username/repository.git
-
+   git clone https://github.com/Rxvxndu2003/Vehicle_Service_System.git
 2. Navigate to the project directory:
    
    ```bash
